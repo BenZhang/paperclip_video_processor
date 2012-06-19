@@ -5,7 +5,6 @@ module Paperclip
     def initialize(file, options = {}, attachment = nil)
       super
       # Set options
-      @aspect         = options[:size].try(:gsub, /x/, ':') || '480:320'
       @audio_bitrate  = options[:audio_bitrate]       || '64k'
       @audio_codec    = options[:audio_codec]         || 'libfaac'
       @bitrate        = options[:bitrate]             || '256k'
@@ -14,6 +13,7 @@ module Paperclip
       @basename       = File.basename(@file.path, @current_format)      
       @file           = file      
       @size           = options[:size]                || '960x600'
+      @aspect         = @size.gsub(/x/, ':')
       @format         = options[:format]              || 'flv'
     end
 
