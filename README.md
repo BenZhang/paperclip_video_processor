@@ -3,6 +3,25 @@ paperclip_video_processor
 
 Installation
 ===========
+First of all install ffmpeg on your computer. This is the whole point to get the video processor to work.
+
+If you are using MAC, and with brew installed.
+
+```ruby
+brew install ffmpeg
+```
+Ubuntu Precise Pangolin 12.04 LTS and Ubuntu Oneiric Ocelot 11.10
+
+```ruby
+sudo apt-get install ffmpeg libavcodec-extra-53
+```
+Ubuntu Natty Narwhal 11.04 and Ubuntu Lucid Lynx 10.04 LTS
+
+```ruby
+sudo apt-get install ffmpeg libavcodec-extra-52
+```
+
+In order to make video converting to work as many cases as it can, I make audio_codec and codec as copy. 
 
 Add this line to your Gemfile
 

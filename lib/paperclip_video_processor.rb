@@ -6,9 +6,9 @@ module Paperclip
       super
       # Set options
       @audio_bitrate  = options[:audio_bitrate]       || '64k'
-      @audio_codec    = options[:audio_codec]         || 'libfaac'
+      @audio_codec    = options[:audio_codec]         || 'copy'
       @bitrate        = options[:bitrate]             || '256k'
-      @codec          = options[:codec]               || 'libx264'      
+      @codec          = options[:codec]               || 'copy'      
       @current_format = File.extname(@file.path)
       @basename       = File.basename(@file.path, @current_format)      
       @file           = file      
