@@ -42,3 +42,5 @@ has_attached_file :asset,
 ```
 
 Please feel free to shoot me an email (bzbnhang@gmail.com) if you occur any bug.
+
+Copyright (c) 2011 Ben Zhang, released under the MIT license
