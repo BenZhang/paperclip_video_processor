@@ -31,8 +31,10 @@ module Paperclip
       # Run command, raise error if there's a problem
       begin
         success = Paperclip.run('ffmpeg', command)
-      rescue PaperclipCommandLineError
-        raise PaperclipError, "There was an error converting the video #{@basename}"
+      rescue Cocaine::ExitStatusError => e
+        raise Paperclip::Error, "There was an error processing the video converting for #{@basename}"
+      rescue Cocaine::CommandNotFoundError => e
+        raise Paperclip::Errors::CommandNotFoundError.new("Could not run the `ffmpeg` command. Please install ffmpeg.")
       end
 
       # Return converted file
